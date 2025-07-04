@@ -1,69 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Us</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-<link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L & M 💘</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<h1>Nós ❤️</h1>
-        <div class="carousel-container">
+  <header>
+    <h1 class="titulo-principal">L & M</h1>
+  </header>
+
+  <section class="carousel-container">
     <div class="carousel">
-      <img src="01.jpg" class="active"/>
-      <img src="02.jpg"/>
-      <img src="03.jpg"/>
-      <img src="04.jpg"/>
+      <img src="img/01.jpg" class="active" />
+      <img src="img/02.jpg" />
+      <img src="img/03.jpg" />
+      <img src="img/04.jpg" />
     </div>
-  </div>
-<div class="descricao">
-  <p>
-    Oi minha gatinha, passando aqui só pra relembrar o quanto te amo. Meu amor você é tudo para mim!!!
-    <br>
-    <p> Quero viver toda a minha vida com você, obrigado por sempre me escutar, me entender e até por aguentar me ver chorando kkkkk</p>
+  </section>
 
-    <p>Te amo infinitamente minha princesa</p>
-    <p>❤️</p>
-</div>
+  <section class="descricao">
+    <p>Oi minha gatinha, passando aqui só pra relembrar o quanto te amo. Meu amor, você é tudo pra mim!!!</p>
+    <p>Quero viver toda a minha vida com você. Obrigado por sempre me escutar, me entender e até por aguentar me ver chorando kkkk</p>
+    <p>Te amo infinitamente, minha princesa ❤️</p>
+  </section>
 
-<div id="contador">Carregando o tempo de namoro...</div>
-  <script>
-    function calcularTempoDesde(dataInicio) {
-      const hoje = new Date();
-      const inicio = new Date(dataInicio);
+  <section id="contador-container">
+    <h2>⏳ Nosso tempo juntos</h2>
+    <div id="caixas-tempo">
+      <div class="tempo-box"><span class="label">Ano(s)</span><span id="anos">0</span></div>
+      <div class="tempo-box"><span class="label">Mês(es)</span><span id="meses">0</span></div>
+      <div class="tempo-box"><span class="label">Dia(s)</span><span id="dias">0</span></div>
+      <div class="tempo-box"><span class="label">Hora(s)</span><span id="horas">0</span></div>
+      <div class="tempo-box"><span class="label">Minuto(s)</span><span id="minutos">0</span></div>
+      <div class="tempo-box"><span class="label">Segundo(s)</span><span id="segundos">0</span></div>
+    </div>
+  </section>
 
-      let anos = hoje.getFullYear() - inicio.getFullYear();
-      let meses = hoje.getMonth() - inicio.getMonth();
-      let dias = hoje.getDate() - inicio.getDate();
+  <section class="frase-container">
+    <button id="nova-frase">Diga algo fofo 💬</button>
+    <p id="frase-romantica">Clique para ver uma mensagem especial 💝</p>
+  </section>
 
-      if (dias < 0) {
-        meses--;
-        const mesAnterior = new Date(hoje.getFullYear(), hoje.getMonth(), 0);
-        dias += mesAnterior.getDate();
-      }
+  <footer>
+    <p>Com amor, Guto 💌</p>
+  </footer>
 
-      if (meses < 0) {
-        anos--;
-        meses += 12;
-      }
-
-      return { anos, meses, dias };
-    }
-
-    function atualizarContador() {
-      const tempo = calcularTempoDesde('2025-06-14');
-      const texto = `${tempo.anos} ano(s), ${tempo.meses} mês(es) e ${tempo.dias} dia(s) de namoro 💑`;
-      document.getElementById('contador').textContent = texto;
-    }
-
-    atualizarContador();
-    setInterval(atualizarContador, 1000 * 60 * 60 * 24);
-  </script>
-<script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
